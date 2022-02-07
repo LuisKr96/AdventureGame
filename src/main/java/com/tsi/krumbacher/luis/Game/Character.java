@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Character {
+public class Character extends Directions {
 
     int playerHealth;
     String playerWeapon;
@@ -16,7 +16,7 @@ public class Character {
     int moneyInInventory;
     int bandageHealingPoints = 20;
 
-    public static int[] Position() {
+    public static int[] startPosition() {
         int[] StartPosition = {0, 0};
         return StartPosition;
     }

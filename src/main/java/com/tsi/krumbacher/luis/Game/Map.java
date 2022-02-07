@@ -1,21 +1,44 @@
 package com.tsi.krumbacher.luis.Game;
 
+import javax.swing.text.html.parser.Entity;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Scanner;
+
 public class Map {
 
+    public static int [][] gameMap = new int[3][3];
+    private int startPosition = gameMap[0][0];
+    private int currentPosition = startPosition;
 
-    /* Location [][] myLocation = new Location[3][3];
-    Character character; */
 
-
-    public Map(){
-        /* Location startPoint = new Location("Start", "this is the start", 0, 0);
-        Location castle = new Location("Castle", "The castle is located somewhere on the map", 3, 3);
-        Location forrest = new Location("Forrest", "The forrest is located somewhere on the map", 3, 2);
-        Location dungeon = new Location("Dungeon", "The dungeon is located somewhere on the map", 2, 3);
-        Location cave = new Location("Cave", "The cave is located somewhere on the map", 3, 1);
-        Location prison = new Location("Prison", "The prison is located somewhere on the map", 2, 2);
-        Location mountain = new Location("Mountain", "The mountain is located somewhere on the map", 1, 3); */
+    public static int[][] getPosition(){
+        Object xAxis = Directions.getXIndex;
+        Object yAxis = Directions.getYIndex;
+        return new int[(int) xAxis ][(int) yAxis];
     }
+
+
+
+    public Map(){}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public static String Forrest(){
         return "You have entered the dark forrest";
@@ -31,6 +54,17 @@ public class Map {
 
     public static String Prison(){
         return "You're in Prison";
+    }
+
+    public final String Description(){
+        int changeOfArea = (int)(Math.random() * 5);
+        String AreaDescription = "";
+        if(changeOfArea == 1){
+            AreaDescription = Forrest();
+        }else if(changeOfArea == 2){
+            AreaDescription = Prison();
+        }
+        return AreaDescription;
     }
 
 

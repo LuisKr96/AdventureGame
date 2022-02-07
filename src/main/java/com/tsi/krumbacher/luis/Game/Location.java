@@ -1,45 +1,57 @@
 package com.tsi.krumbacher.luis.Game;
 
-public class Location extends Map{
+import javax.swing.text.html.parser.Entity;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
-    private int x, y;
-    private String name;
-    private String description;
+public class Location {
 
-    public Location(String aName, String aDescription, int x, int y){
-        this.name = aName;
-        this.description = aDescription;
-        this.x = x;
-        this.y = y;
-    }
-    public void setName(String name){
-        this.name = name;
-    }
-    public String getName(){
-        return name;
-    }
+    public static int [][] StartLocation = {{0},{0}};
 
-    public void setDescription(String description){
-        this.description = description;
-    }
-    public String getDescription(){
-        return description;
-    }
+    public int [][] Forrest = {{0},{1}};
+    public int [][] Cave = {{0},{2}};
+    public int [][] Mountains = {{1},{0}};
+    public int [][] Lake = {{1},{1}};
+    public int [][] Sea = {{1},{2}};
+    public int [][] Swamp = {{2},{0}};
+    public int [][] Castle = {{2},{1}};
+    public int [][] Treasure = {{2},{2}};
 
 
-    public int getXCoordinate(){
-        return x;
-    }
-    public void setXCoordinate(int x){
-        this.x = x;
-    }
-    public int getYCoordinate(){
-        return y;
-    }
-    public void setYCoordinate(int y){
-        this.y = y;
+    public static boolean getStartLocation(){
+        return Arrays.deepEquals(StartLocation, Map.getPosition());
     }
 
+    public boolean getForrestLocation(){
+        return Arrays.deepEquals(Forrest, Map.getPosition());
+    }
 
+    public boolean getCaveLocation(){
+        return Arrays.deepEquals(Cave, Map.getPosition());
+    }
 
+    public boolean getMountainsLocation(){
+        return Arrays.deepEquals(Mountains, Map.getPosition());
+    }
+
+    public boolean getLakeLocation(){
+        return Arrays.deepEquals(Lake, Map.getPosition());
+    }
+
+    public boolean getSeaLocation(){
+        return Arrays.deepEquals(Sea, Map.getPosition());
+    }
+
+    public boolean getSwampLocation(){
+        return Arrays.deepEquals(Swamp, Map.getPosition());
+    }
+
+    public boolean getCastleLocation(){
+        return Arrays.deepEquals(Castle, Map.getPosition());
+    }
+
+    public boolean getTreasureLocation(){
+        return Arrays.deepEquals(Treasure, Map.getPosition());
+    }
 }
